@@ -11,6 +11,7 @@
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
+  - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -38,6 +39,15 @@ This is the second project of the Microverve program corresponding to module two
 + +WebPack
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Key Features <a name="key-features"></a>
++ Adding a new item.
++ Removing a selected item.
++ Marking a selected item as complete.
++ Removing all items marked as complete at once.
++ Reordering a selected item
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
@@ -54,7 +64,9 @@ In order to run this project you need:
 + A web browser
 
 ### Setup
-Clone this repository to your computer
+Clone this repository to your computer.
+- git clone git@github.com:sanieni6/ToDoList.git
+- cd ToDoList
 
 ### Usage
 To run the project, execute the "index.html" file in your browser
@@ -90,7 +102,8 @@ Linkedin: [Linkedin](https://www.linkedin.com/in/luissanchezz3/)
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
-
+Feel free to create a issue with your comments and suggestions: <br>
+github Issues:(https://github.com/sanieni6/ToDoList/issues)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
