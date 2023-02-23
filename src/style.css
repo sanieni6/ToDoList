@@ -125,6 +125,26 @@ h2 {
   color: #d4d4d4;
 }
 
+.trash {
+  width: 20px;
+  height: 20px;
+  color: #5d5555;
+  margin-right: 10px;
+}
+
+.trash:hover {
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #fff;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
 .material-icons:hover,
 .status:hover {
   color: #5d5555;
@@ -134,4 +154,9 @@ h2 {
 
 .submit-button:hover {
   cursor: pointer;
+}
+
+.text-input:focus,
+#task:focus {
+  outline: none;
 }
