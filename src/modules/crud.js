@@ -1,5 +1,9 @@
+import * as interactive from './interactive.js';
+
 const list = document.querySelector('.list');
 const LOCAL_STORAGE_KEY = 'items';
+let outlined;
+let checkBoxesArr;
 const getItems = () => {
   const savedTasks = window.localStorage.getItem(LOCAL_STORAGE_KEY);
   return savedTasks ? JSON.parse(savedTasks) : [];
@@ -19,6 +23,18 @@ const removeTask = (index) => {
 export const updateIndexes = () => {
   tasks.forEach((element, id) => {
     element.index = id;
+  });
+};
+
+export const updateCheckBoxes = () => {
+  tasks.forEach((element, index) => {
+    if (element.completed === true) {
+      outlined[index].style.textDecoration = 'line-through';
+      checkBoxesArr[index].checked = true;
+    } else {
+      outlined[index].style.textDecoration = 'none';
+      checkBoxesArr[index].checked = false;
+    }
   });
 };
 
@@ -50,9 +66,15 @@ export const create = () => {
   const trash = Array.from(document.querySelectorAll('.trash'));
   const deleteButton = Array.from(document.querySelectorAll('.delete'));
   const dots = Array.from(document.querySelectorAll('.material-icons'));
+  const checkboxes = document.querySelectorAll('.status');
+  const deleteAll = document.querySelector('.clear-button');
+  outlined = remove;
+  checkBoxesArr = checkboxes;
+  updateCheckBoxes();
   remove.forEach((element, index) => element.addEventListener('focus', () => {
     liElement[index].style.background = '#fff59e';
     element.style.background = '#fff59e';
+    element.style.textDecoration = 'none';
     deleteButton[index].style.background = '#fff59e';
     dots[index].classList.add('hidden');
     trash[index].classList.remove('hidden');
@@ -64,6 +86,7 @@ export const create = () => {
     });
   }));
   remove.forEach((element, index) => element.addEventListener('blur', () => {
+    updateCheckBoxes();
     liElement[index].style.background = '#fff';
     element.style.background = '#fff';
     deleteButton[index].style.background = '#fff';
@@ -71,4 +94,16 @@ export const create = () => {
     dots[index].classList.remove('hidden');
     if (edit(element, index)) { create(); }
   }));
+
+  checkboxes.forEach((element, index) => element.addEventListener('change', () => {
+    tasks = interactive.ckeckboxState(tasks, remove, element, index);
+    saveLocalStorage();
+  }));
+
+  deleteAll.addEventListener('click', () => {
+    tasks = interactive.deleteChecked(tasks);
+    saveLocalStorage();
+    updateIndexes();
+    create();
+  });
 };
