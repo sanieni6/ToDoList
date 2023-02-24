@@ -103,6 +103,7 @@ export const create = () => {
   deleteAll.addEventListener('click', () => {
     tasks = interactive.deleteChecked(tasks);
     saveLocalStorage();
+    updateIndexes();
     create();
   });
 };
