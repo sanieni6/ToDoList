@@ -4,7 +4,6 @@
 import _ from 'lodash';
 import './style.css';
 import * as crud from './modules/crud.js';
-// import './modules/interactive.js';
 
 const textInput = document.querySelector('.text-input');
 
