@@ -13,10 +13,8 @@ describe('Create and delete test', () => {
   });
   describe('Delete function', () => {
     test('The length of the array must be zero', () => {
-        crud.removeTask(0);
-        expect(crud.tasks.length).toBe(0);
-      });
-
-
+      crud.removeTask(0);
+      expect(crud.tasks.length).toBe(0);
+    });
   });
 });
