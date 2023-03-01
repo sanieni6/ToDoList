@@ -3,16 +3,20 @@
  */
 
 import * as crud from '../src/modules/crud.js';
-import add from '../src/index.js';
 
 describe('Create and delete test', () => {
   describe('Create function', () => {
     test('It must be a value', () => {
-      add('do Homework');
+      crud.add('do Homework');
       expect(crud.tasks.length).toBe(1);
     });
   });
   describe('Delete function', () => {
+    test('The length of the array must be zero', () => {
+        crud.removeTask(0);
+        expect(crud.tasks.length).toBe(0);
+      });
+
 
   });
 });
