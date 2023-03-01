@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1677703466559" clover="3.2.0">
-  <project timestamp="1677703466560" name="All files">
+<coverage generated="1677703702913" clover="3.2.0">
+  <project timestamp="1677703702913" name="All files">
     <metrics statements="88" coveredstatements="27" conditionals="10" coveredconditionals="1" methods="23" coveredmethods="7" elements="121" coveredelements="35" complexity="0" loc="88" ncloc="88" packages="1" files="2" classes="2"/>
-    <file name="crud.js" path="C:\Users\sanie\Microverse-projects\myWeeklyProjects\ToDoList\src\modules\crud.js">
+    <file name="crud.js" path="C:\Users\nicol\OneDrive\Documentos\Microverse\Module 2\ToDoList\src\modules\crud.js">
       <metrics statements="77" coveredstatements="25" conditionals="8" coveredconditionals="1" methods="20" coveredmethods="7"/>
       <line num="3" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
@@ -82,7 +82,7 @@
       <line num="117" count="0" type="stmt"/>
       <line num="118" count="0" type="stmt"/>
     </file>
-    <file name="interactive.js" path="C:\Users\sanie\Microverse-projects\myWeeklyProjects\ToDoList\src\modules\interactive.js">
+    <file name="interactive.js" path="C:\Users\nicol\OneDrive\Documentos\Microverse\Module 2\ToDoList\src\modules\interactive.js">
       <metrics statements="11" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="3" coveredmethods="0"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="0" type="cond" truecount="0" falsecount="2"/>
