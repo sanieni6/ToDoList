@@ -2,6 +2,7 @@ import * as interactive from './interactive.js';
 
 const list = document.querySelector('.list');
 const LOCAL_STORAGE_KEY = 'items';
+const index = 0;
 let outlined;
 let checkBoxesArr;
 const getItems = () => {
@@ -16,7 +17,7 @@ export const saveLocalStorage = () => {
   window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
 };
 
-const removeTask = (index) => {
+export const removeTask = (index) => {
   tasks = tasks.filter((task, id) => index !== id);
 };
 
@@ -24,6 +25,16 @@ export const updateIndexes = () => {
   tasks.forEach((element, id) => {
     element.index = id;
   });
+};
+
+export const add = (description) => {
+  const task = {};
+  task.description = description;
+  task.completed = false;
+  task.index = index;
+  tasks.push(task);
+  updateIndexes();
+  saveLocalStorage();
 };
 
 export const updateCheckBoxes = () => {
