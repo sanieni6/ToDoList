@@ -10,16 +10,20 @@ const textInput = document.querySelector('.text-input');
 const form = document.querySelector('.forma');
 const index = 0;
 
+export const add = (description) => {
+  const task = {};
+  task.description = description;
+  task.completed = false;
+  task.index = index;
+  crud.tasks.push();
+  crud.updateIndexes();
+  crud.saveLocalStorage();
+};
+
 window.onload = crud.create();
 
 form.addEventListener('submit', (event) => {
-  const task = {};
-  task.description = textInput.value;
-  task.completed = false;
-  task.index = index;
-  crud.tasks.push(task);
-  crud.updateIndexes();
-  crud.saveLocalStorage();
+  add(textInput.value);
   crud.create();
   textInput.value = '';
   event.preventDefault();
