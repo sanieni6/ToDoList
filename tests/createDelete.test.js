@@ -1,8 +1,12 @@
 /**
  * @jest-environment jsdom
  */
-
 import * as crud from '../src/modules/crud.js';
+const newLS = require('../__mocks__/mockLocalStorage');
+global.localStorage = newLS;
+
+
+crud.add('Lunch break');
 
 describe('Create and delete test', () => {
   // Test add function
@@ -10,8 +14,8 @@ describe('Create and delete test', () => {
     test('It must be a value', () => {
       // Add a task to the array
       crud.add('do Homework');
-      // Array length should increase from 0 to 1
-      expect(crud.tasks.length).toBe(1);
+      // Array length should increase from 1 to 2
+      expect(crud.tasks.length).toBe(2);
     });
   });
 
@@ -20,8 +24,36 @@ describe('Create and delete test', () => {
     test('The length of the array must be zero', () => {
       // Remove the previous task added from the array
       crud.removeTask(0);
-      // Array length should decrease to 0
-      expect(crud.tasks.length).toBe(0);
+      // Array length should decrease to 1
+      expect(crud.tasks.length).toBe(1);
     });
   });
 });
+
+describe('Edit, update and clear test', () => {
+  // Test edit function
+  describe('Edit function', () => {
+    test('The task description should change', () => {
+      const input = document.createElement('input');
+      input.value = 'Do testing'
+      // Edit description of the first task of the array with input value 
+      crud.edit(input, 0)
+      // First array object description should be 'Do testing' 
+      expect(crud.tasks[0].description).toBe('Do testing')
+    });
+
+    describe('Update function', () => {
+      test('The task completed property should change to completed', () => {
+        // ckeckboxState function
+      });
+    })
+
+    describe('Clear completed function', () => {
+      test('All the completed tasks should be deleted from the array', () => {
+        // deleteChecked function
+      });
+    })
+  })
+
+
+})
