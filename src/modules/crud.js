@@ -49,7 +49,7 @@ export const updateCheckBoxes = () => {
   });
 };
 
-const edit = (element, index) => {
+export const edit = (element, index) => {
   if (tasks[index].description !== element.value) {
     tasks[index].description = element.value;
     saveLocalStorage();
