@@ -160,3 +160,7 @@ h2 {
 #task:focus {
   outline: none;
 }
+
+.tested {
+  border: none;
+}
